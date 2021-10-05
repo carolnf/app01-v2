@@ -65,6 +65,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./page/adotar/adotar.module').then((m) => m.AdotarPageModule),
   },
+  {
+    path: 'duvidas',
+    loadChildren: () =>
+      import('./page/duvidas/duvidas.module').then((m) => m.DuvidasPageModule),
+  },
 
   {
     path: 'logindoar',
@@ -105,9 +110,7 @@ const routes: Routes = [
   {
     path: 'user/logout',
     loadChildren: () =>
-      import('./user/logout/logout.module').then(
-        (m) => m.LogoutPageModule
-      ),
+      import('./user/logout/logout.module').then((m) => m.LogoutPageModule),
     // Só acessa se estiver logado
     canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: toLogin },

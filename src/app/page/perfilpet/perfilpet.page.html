@@ -29,7 +29,7 @@
 <ion-content class="ion-padding-horizontal" *ngIf="item">
 
   <ion-slides pager="false">
-    <ion-img class="list-img" style="background-image: url('{{ (item | async)?.foto }}');"></ion-img>
+    <ion-img class="list-img" src="{{ (item | async)?.foto }}"></ion-img>
   </ion-slides>
 
   <div class="title">
@@ -105,8 +105,8 @@
         </ion-tab-button>
 
         <ion-tab-button routerLink="/login">
-          <ion-icon name="notifications-outline"></ion-icon>
-          <ion-label>Notificação</ion-label>
+          <ion-icon name="person-outline"></ion-icon>
+          <ion-label>Perfil</ion-label>
         </ion-tab-button>
 
       </ion-tab-bar>

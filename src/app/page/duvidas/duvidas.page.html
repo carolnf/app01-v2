@@ -1,101 +1,193 @@
-
+<!-- Header -->
 
 <ion-header>
-  <img src="assets/logo.png" style="width: 140px; height: 50px; margin-left: 40px;" alt="Parada Pet" routerLink="/home">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
 
+    <img
+      src="assets/logo.png"
+      style="width: 140px; height: 50px; margin-left: 40px"
+      alt="Parada Pet"
+      routerLink="/home"
+    />
+    <ng-template #showLogin>
+      <ion-thumbnail slot="end">
+        <img
+          src="assets/teste.png"
+          style="width: 8 0px; height: 40px"
+          alt="logue-se"
+          routerLink="/login"
+        />
+      </ion-thumbnail>
+    </ng-template>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<!-- BODY -->
+
+<ion-content class="ion-padding-horizontal">
   <ion-card>
-  <ion-header [translucent]="true">
-
-    <ion-toolbar>
-      <ion-title>
-       
-      </ion-title>
-      <ion-img src="assets/banner.gif"  class="logotipo"></ion-img>
-    </ion-toolbar>
-  </ion-header>
-
-</ion-card>
-<ion-content>
-<ion-card>
-      <button class="accordion"><strong>QUAIS OS DOCUMENTOS EU PRECISO APRENSENTAR PARA REALIZAR ADOÇÃO?</strong></button>
+    <ion-header [translucent]="true">
+      <ion-toolbar>
+        <ion-title> </ion-title>
+        <ion-img src="assets/banner.gif" class="logotipo"></ion-img>
+      </ion-toolbar>
+    </ion-header>
+  </ion-card>
+  <ion-content>
+    <ion-card>
+      <button class="accordion">
+        <strong
+          >QUAIS OS DOCUMENTOS EU PRECISO APRENSENTAR PARA REALIZAR
+          ADOÇÃO?</strong
+        >
+      </button>
       <div class="panel">
         <p>Apresentar comprovante de residência e cópia CPF e RG;</p>
         <p>Assinar Termo de Posse Responsável(2 responsáveis pela adoção);</p>
       </div>
 
-      <button class="accordion"><strong>POSSO ADOTAR UM PET SENDO MENOR DE IDADE?</strong></button>
+      <button class="accordion">
+        <strong>POSSO ADOTAR UM PET SENDO MENOR DE IDADE?</strong>
+      </button>
       <div class="panel">
-        <p>Não.Animais de estimação só podem ser adotados por pessoas com idade igual ou superior a 21 anos.</p>
-        <p>Mesmo assim, algumas instituições querem saber se os demais integrantes da família estão de acordo
-          com a adoção do animal.</p>
-          <p>Um conflito familiar pode resultar em mais um abandono ou maus tratos.</p>
+        <p>
+          Não.Animais de estimação só podem ser adotados por pessoas com idade
+          igual ou superior a 21 anos.
+        </p>
+        <p>
+          Mesmo assim, algumas instituições querem saber se os demais
+          integrantes da família estão de acordo com a adoção do animal.
+        </p>
+        <p>
+          Um conflito familiar pode resultar em mais um abandono ou maus tratos.
+        </p>
       </div>
 
-      <button class="accordion"><strong>É VERDADE QUE PRECISAMOS PASSAR EM UM PROCESSO DE ENTREVISTA PARA ADOÇÃO?</strong></button>
+      <button class="accordion">
+        <strong
+          >É VERDADE QUE PRECISAMOS PASSAR EM UM PROCESSO DE ENTREVISTA PARA
+          ADOÇÃO?</strong
+        >
+      </button>
       <div class="panel">
-        <p>Sim.A entrevista faz parte do processo de adoção em algumas entidades.</p>
-        <p>O objetivo é avaliar se a pessoa interessada realmente tem condições para cuidar do animal: alimentação,</p>
-        <p> assistência veterinária, adestramento, proteção, entre outros cuidados.</p>
+        <p>
+          Sim.A entrevista faz parte do processo de adoção em algumas entidades.
+        </p>
+        <p>
+          O objetivo é avaliar se a pessoa interessada realmente tem condições
+          para cuidar do animal: alimentação,
+        </p>
+        <p>
+          assistência veterinária, adestramento, proteção, entre outros
+          cuidados.
+        </p>
       </div>
 
-      <button class="accordion"><strong>QUAIS OS DOCUMENTOS EU PRECISO APRENSENTAR PARA REALIZAR ADOÇÃO?</strong></button>
+      <button class="accordion">
+        <strong
+          >QUAIS OS DOCUMENTOS EU PRECISO APRENSENTAR PARA REALIZAR
+          ADOÇÃO?</strong
+        >
+      </button>
       <div class="panel">
         <p>Apresentar comprovante de residência e cópia CPF e RG</p>
         <p>Assinar Termo de Posse Responsável ( 2 responsáveis pela adoção )</p>
       </div>
 
-      <button class="accordion"><strong>POSSO ADOTAR UM PET SENDO MENOR DE IDADE?</strong></button>
+      <button class="accordion">
+        <strong>POSSO ADOTAR UM PET SENDO MENOR DE IDADE?</strong>
+      </button>
       <div class="panel">
-        <p>Não.Animais de estimação só podem ser adotados por pessoas com idade igual ou superior a 21 anos.</p>
-        <p>Mesmo assim, algumas instituições querem saber se os demais integrantes da família estão de acordo
-          com a adoção do animal.</p>
-          <p>Um conflito familiar pode resultar em mais um abandono ou maus tratos.</p>
+        <p>
+          Não.Animais de estimação só podem ser adotados por pessoas com idade
+          igual ou superior a 21 anos.
+        </p>
+        <p>
+          Mesmo assim, algumas instituições querem saber se os demais
+          integrantes da família estão de acordo com a adoção do animal.
+        </p>
+        <p>
+          Um conflito familiar pode resultar em mais um abandono ou maus tratos.
+        </p>
       </div>
 
-      <button class="accordion"><strong>É VERDADE QUE PRECISAMOS PASSAR EM UM PROCESSO DE ENTREVISTA PARA ADOÇÃO?</strong></button>
+      <button class="accordion">
+        <strong
+          >É VERDADE QUE PRECISAMOS PASSAR EM UM PROCESSO DE ENTREVISTA PARA
+          ADOÇÃO?</strong
+        >
+      </button>
       <div class="panel">
-        <p>Sim.A entrevista faz parte do processo de adoção em algumas entidades.</p>
-        <p>O objetivo é avaliar se a pessoa interessada realmente tem condições para cuidar do animal: alimentação,</p>
-        <p> assistência veterinária, adestramento, proteção, entre outros cuidados.</p>
+        <p>
+          Sim.A entrevista faz parte do processo de adoção em algumas entidades.
+        </p>
+        <p>
+          O objetivo é avaliar se a pessoa interessada realmente tem condições
+          para cuidar do animal: alimentação,
+        </p>
+        <p>
+          assistência veterinária, adestramento, proteção, entre outros
+          cuidados.
+        </p>
       </div>
 
-
-      <button class="accordion"><strong>ONDE ENCONTRAR UM PET PARA ADOÇÃO?</strong></button>
+      <button class="accordion">
+        <strong>ONDE ENCONTRAR UM PET PARA ADOÇÃO?</strong>
+      </button>
       <div class="panel">
-        <p>Reforçamos bastante a existência de ONGs responsáveis pelo processo.</p>
-        <p>Com elas, é possível tirar dúvidas e ainda preencher um formulário de interesse. Você entrará em contato com animais já vacinados, vermifugados e com um microchip de identificação.</p>
-        <p>  Após a análise, a adoção de cães é feita em até 72 horas.</p>
+        <p>
+          Reforçamos bastante a existência de ONGs responsáveis pelo processo.
+        </p>
+        <p>
+          Com elas, é possível tirar dúvidas e ainda preencher um formulário de
+          interesse. Você entrará em contato com animais já vacinados,
+          vermifugados e com um microchip de identificação.
+        </p>
+        <p>Após a análise, a adoção de cães é feita em até 72 horas.</p>
       </div>
 
-      <button class="accordion"><strong>MINHA DÚVIDA NAO APARECEU AQUI E AGORA?</strong></button>
+      <button class="accordion">
+        <strong>MINHA DÚVIDA NAO APARECEU AQUI E AGORA?</strong>
+      </button>
       <div class="panel">
-        <p>É simples, clique abaixo e entre em contato com nosso Suporte e tiraremos todas as suas dúvidas.</p>
-        <ion-tab-button href="https://sites.google.com/d/1AP42Qtk_bKy2K7t71ZeoCzSkXTRVZnGm/p/16zpF9bCrAf3KcZ3xkWQdMAO_Dk88qxCi/edit">
+        <p>
+          É simples, clique abaixo e entre em contato com nosso Suporte e
+          tiraremos todas as suas dúvidas.
+        </p>
+        <ion-tab-button
+          href="https://sites.google.com/d/1AP42Qtk_bKy2K7t71ZeoCzSkXTRVZnGm/p/16zpF9bCrAf3KcZ3xkWQdMAO_Dk88qxCi/edit"
+        >
           <ion-label>SUPORTE</ion-label>
-         </ion-tab-button>
-        </div>
-
-
-
-
-        
-
-
-
-
-
+        </ion-tab-button>
+      </div>
     </ion-card>
-
-
-
-
   </ion-content>
 
+  <!-- Footer -->
 
+  <ion-footer>
+    <ion-toolbar>
+      <ion-tabs>
+        <ion-tab-bar slot="bottom">
+          <ion-tab-button routerLink="/home">
+            <ion-icon name="home-outline"></ion-icon>
+            <ion-label>Home</ion-label>
+          </ion-tab-button>
 
+          <ion-tab-button routerLink="/adotar">
+            <ion-icon name="paw-outline"></ion-icon>
+            <ion-label>Adotar</ion-label>
+          </ion-tab-button>
 
-
-
+          <ion-tab-button routerLink="/login">
+            <ion-icon name="person-outline"></ion-icon>
+            <ion-label>Perfil</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>
