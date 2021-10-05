@@ -130,10 +130,6 @@ const routes: Routes = [
     canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: toLogin },
   },
-  {
-    path: 'duvidas',
-    loadChildren: () => import('./page/duvidas/duvidas.module').then( m => m.DuvidasPageModule)
-  },
 
   // Rota curinga (rotas inexistentes)
   // TEM QUE SER SEMPRE A ÚLTIMA ROTA
