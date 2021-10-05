@@ -13,6 +13,7 @@ import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { CookieModule } from 'ngx-cookie';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
