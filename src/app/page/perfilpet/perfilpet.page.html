@@ -34,17 +34,8 @@
 
 <!-- BODY -->
 
+<ion-content class="ion-padding-horizontal" *ngIf="item">
 
-  <ion-item>
-    <article *ngIf="item">
-      --------------------------------------
-      <h2>{{ (item | async)?.nome }}</h2>
-      --------------------------------------
-      </article>
-    <ion-textarea></ion-textarea>
-  </ion-item>
-
-<ion-content class="ion-padding-horizontal">
   <ion-slides pager="true">
     <ion-slide>
       <img src="assets/banner3.png" />
@@ -53,34 +44,36 @@
 
   <div class="title">
   <div class="ion-text-left">
-    <h6 class="text-white"><strong>Milo</strong></h6>
+    <h6 class="text-white"><strong>{{ (item | async)?.nome }}</strong></h6>
   </div>
   </div>
   <ion-list>
-    <ion-item>
-      <ion-icon name="balloon-outline"></ion-icon>
-      <ion-label>Idade</ion-label>
-      <ion-icon name="male-female-outline"></ion-icon>
-      <ion-label>Sexo</ion-label>
+    <ion-item class="fonte">
+      <ion-icon name="balloon-outline" class="icon"></ion-icon>
+      <ion-label>Idade: {{ (item | async)?.idade }} </ion-label>
+      <ion-icon name="male-female-outline" class="icon2"></ion-icon>
+      <ion-label>Sexo: {{ (item | async)?.sexo }}</ion-label>
     </ion-item>
   </ion-list>
   <ion-list>
-    <ion-item>
-      <ion-icon name="pricetag-outline"></ion-icon>
-      <ion-label>Espécie</ion-label>
-      <ion-icon name="pin-outline"></ion-icon>
-      <ion-label>Raça</ion-label>
+    <ion-item class="fonte">
+      <ion-icon name="pricetag-outline" class="icon"></ion-icon>
+      <ion-label>Espécie: {{ (item | async)?.especie }}</ion-label>
+      <ion-icon name="pin-outline" class="icon2"></ion-icon>
+      <ion-label>Raça: {{ (item | async)?.raca }}</ion-label>
     </ion-item>
   </ion-list>
   <ion-list>
-    <ion-item>
-      <ion-icon name="medkit-outline"></ion-icon>
-      <ion-label>Vacina</ion-label>
+    <ion-item class="fonte">
+      <ion-icon name="medkit-outline" class="icon"></ion-icon>
+      <ion-label>Vacina: {{ (item | async)?.vacinas }}</ion-label>
     </ion-item>
   </ion-list>
   <ion-list>
-    <ion-item>
-      <ion-label>Descrição do animal:</ion-label>
+    <ion-item class="fonte">
+      <ion-label>Descrição do animal:
+        <p>{{ (item | async)?.descricao }}</p>
+      </ion-label>
     </ion-item>
   </ion-list>
 
@@ -90,9 +83,9 @@
   </div>
 </div>
   <ion-list>
-    <ion-item>
-      <ion-icon name="person-outline"></ion-icon>
-      <ion-label>Nome</ion-label>
+    <ion-item class="fonte">
+      <ion-icon name="person-outline" class="icon"></ion-icon>
+      <ion-label>Nome {{ (item | async)?.doador }}</ion-label>
     </ion-item>
   </ion-list>
 
@@ -100,6 +93,7 @@
 
   <div class="ion-text-center">
   <ion-button size="small" color="light" routerLink="/confadotar/{{id}}">
+    <ion-icon name="heart" class="icon"></ion-icon>
     ADOTAR</ion-button>
 </div>
 </ion-content>

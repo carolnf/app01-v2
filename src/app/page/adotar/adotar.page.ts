@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -18,15 +19,18 @@ export class AdotarPage implements OnInit {
     public auth: AngularFireAuth,
     public afs: AngularFirestore,
     // routerLInk
-    public router: Router
+    public router: Router,
+    private cookieService: CookieService
   ) {
 
-    this.items = afs.collection('animais').valueChanges({ idField: 'id'});
+    this.items = afs.collection('animais').valueChanges({ idField: 'id' });
 
- }
-
-  ngOnInit() {
+    afs.firestore.collection('animais').get().then(snap => {
+      this.cookieService.put('cookieadotar', snap.size.toString());
+    });
   }
+
+  ngOnInit() { }
 
   ionViewWillEnter() {
     this.auth.onAuthStateChanged((userData) => {

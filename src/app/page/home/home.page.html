@@ -38,15 +38,15 @@
 <h6><strong>Adicionados recentemente</strong></h6>
 </div>
 
-<ion-item routerLink="/perfilpet" class="item" *ngFor="let item of items | async" routerLink="/perfilpet/{{ item.id }}">
+<ion-item routerLink="/perfilpet" class="item" *ngFor="let item of items | async" routerLink="/perfilpet/{{ item.id }}" class="fonte">
   <ion-thumbnail slot="start" class="list-img" style="background-image: url('{{ item.foto }}');">
 </ion-thumbnail>
 <ion-label>
-<h5>{{ item.nome }}</h5>
+<h5 class="h5">{{ item.nome }}</h5>
 <p>Raça: {{item.raca}}</p>
 <p>Idade: {{item.idade}}</p>
 <p>Sexo: {{item.sexo}}</p>
-<h5>Espécie: {{item.especie}}</h5>
+<h5 class="h5">Espécie: {{item.especie}}</h5>
 </ion-label>
 </ion-item>
 

@@ -88,6 +88,10 @@ const routes: Routes = [
     path: 'confadotar/:petid',
     loadChildren: () => import('./page/confadotar/confadotar.module').then( m => m.ConfadotarPageModule),
   },
+  {
+    path: 'duvidas',
+    loadChildren: () => import('./page/duvidas/duvidas.module').then( m => m.DuvidasPageModule)
+  },
 
   // Rota curinga (rotas inexistentes)
   // TEM QUE SER SEMPRE A ÚLTIMA ROTA
@@ -96,6 +100,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./page/e404/e404.module').then((m) => m.E404PageModule),
   },
+ 
 
 ];
 

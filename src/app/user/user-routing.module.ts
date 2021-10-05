@@ -15,7 +15,15 @@ const routes: Routes = [
   {
     path: 'doar',
     loadChildren: () => import('./doar/doar.module').then( m => m.DoarPageModule)
+  },  {
+    path: 'notificacao',
+    loadChildren: () => import('./notificacao/notificacao.module').then( m => m.NotificacaoPageModule)
+  },
+  {
+    path: 'duvidas',
+    loadChildren: () => import('./duvidas/duvidas.module').then( m => m.DuvidasPageModule)
   }
+
 ];
 
 @NgModule({
