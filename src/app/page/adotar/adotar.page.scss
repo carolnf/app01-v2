@@ -1,5 +1,11 @@
 .list-img {
-    height: 100px;
+    background-color: black;
+    height: 100%;
+    min-width: 100px;
+    min-height: 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .h5 {
     color: #087B80;

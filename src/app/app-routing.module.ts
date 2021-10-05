@@ -9,8 +9,8 @@ import {
 } from '@angular/fire/auth-guard';
 
 // Define redirecionadores
-const toLogin = () => redirectUnauthorizedTo(['/login']); // Usuário  não logado
-const isLogged = () => redirectLoggedInTo(['/profile']); // Usuário logado
+const toLogin = () => redirectUnauthorizedTo(['/user/login']); // Usuário  não logado
+const isLogged = () => redirectLoggedInTo(['/perfiluser']); // Usuário logado
 
 const routes: Routes = [
   // Rota da página inicial
@@ -18,11 +18,6 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
-  },
-  {
-    path: 'folder/:id',
-    loadChildren: () =>
-      import('./folder/folder.module').then((m) => m.FolderPageModule),
   },
 
   // Página inicial
@@ -50,43 +45,90 @@ const routes: Routes = [
 
   {
     path: 'perfilpet/:petid',
-    loadChildren: () => import('./page/perfilpet/perfilpet.module').then( m => m.PerfilpetPageModule)
+    loadChildren: () =>
+      import('./page/perfilpet/perfilpet.module').then(
+        (m) => m.PerfilpetPageModule
+      ),
   },
   {
     path: 'perfiluser',
-    loadChildren: () => import('./page/perfiluser/perfiluser.module').then( m => m.PerfiluserPageModule),
+    loadChildren: () =>
+      import('./page/perfiluser/perfiluser.module').then(
+        (m) => m.PerfiluserPageModule
+      ),
+    // Só acessa se estiver logado
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: toLogin },
   },
   {
     path: 'adotar',
-    loadChildren: () => import('./page/adotar/adotar.module').then( m => m.AdotarPageModule),
+    loadChildren: () =>
+      import('./page/adotar/adotar.module').then((m) => m.AdotarPageModule),
   },
-  {
-    path: 'loginadotar',
-    loadChildren: () => import('./pages/loginadotar/loginadotar.module').then( m => m.LoginadotarPageModule),
-  },
+
   {
     path: 'logindoar',
-    loadChildren: () => import('./pages/logindoar/logindoar.module').then( m => m.LogindoarPageModule),
+    loadChildren: () =>
+      import('./pages/logindoar/logindoar.module').then(
+        (m) => m.LogindoarPageModule
+      ),
+    // Só acessa se estiver logado
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: toLogin },
   },
   {
     path: 'user/edit',
-    loadChildren: () => import('./user/edit/edit.module').then( m => m.EditPageModule),
+    loadChildren: () =>
+      import('./user/edit/edit.module').then((m) => m.EditPageModule),
+    // Só acessa se estiver logado
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: toLogin },
   },
   {
     path: 'user/login',
-    loadChildren: () => import('./user/login/login.module').then( m => m.LoginPageModule),
+    loadChildren: () =>
+      import('./user/login/login.module').then((m) => m.LoginPageModule),
+    // Só acessa se estiver logado
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: isLogged },
   },
   {
     path: 'user/register',
-    loadChildren: () => import('./user/register/register.module').then( m => m.RegisterPageModule),
+    loadChildren: () =>
+      import('./user/register/register.module').then(
+        (m) => m.RegisterPageModule
+      ),
+    // Só acessa se estiver logado
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: toLogin },
+  },
+  {
+    path: 'user/logout',
+    loadChildren: () =>
+      import('./user/logout/logout.module').then(
+        (m) => m.LogoutPageModule
+      ),
+    // Só acessa se estiver logado
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: toLogin },
   },
   {
     path: 'user/profile',
-    loadChildren: () => import('./user/profile/profile.module').then( m => m.ProfilePageModule),
+    loadChildren: () =>
+      import('./user/profile/profile.module').then((m) => m.ProfilePageModule),
+    // Só acessa se estiver logado
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: toLogin },
   },
   {
     path: 'confadotar/:petid',
-    loadChildren: () => import('./page/confadotar/confadotar.module').then( m => m.ConfadotarPageModule),
+    loadChildren: () =>
+      import('./page/confadotar/confadotar.module').then(
+        (m) => m.ConfadotarPageModule
+      ),
+    // Só acessa se estiver logado
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: toLogin },
   },
   {
     path: 'duvidas',
@@ -100,8 +142,6 @@ const routes: Routes = [
     loadChildren: () =>
       import('./page/e404/e404.module').then((m) => m.E404PageModule),
   },
- 
-
 ];
 
 @NgModule({

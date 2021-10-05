@@ -11,7 +11,7 @@ import { CookieService } from 'ngx-cookie';
 })
 
 export class AppComponent implements OnInit {
-  
+
   public size: number;
   public notSize: number;
   public showNotifications = '';
@@ -26,8 +26,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.cookieSize = parseInt(this.cookieService.get("cookieadotar"));
-    if (isNaN(this.cookieSize)) this.cookieSize = 0;
+    this.cookieSize = parseInt(this.cookieService.get('cookieadotar'),10);
+    if (isNaN(this.cookieSize)) { this.cookieSize = 0;}
 
     this.afs.firestore.collection('animais').onSnapshot(snap => {
       this.size = snap.size;

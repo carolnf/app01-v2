@@ -61,6 +61,86 @@
         ></ion-input>
       </ion-item>
 
+        <!-- Campo data de nascimento (birth) -->
+        <ion-item>
+          <ion-label for="birth" position="floating" color="primary">
+            Nascimento:
+            <ion-text color="danger" *ngIf="registerForm.controls.birth.errors">
+              <small *ngIf="registerForm.controls.birth.errors.required"
+                >* Obrigatório</small
+              >
+              <small *ngIf="registerForm.controls.birth.errors.pattern"
+                >* Inválido</small
+              >
+            </ion-text>
+          </ion-label>
+          <ion-input
+            type="text"
+            id="birth"
+            name="birth"
+            formControlName="birth"
+          ></ion-input>
+        </ion-item>
+
+        <!-- Campo CPF (cpf) -->
+      <ion-item>
+        <ion-label for="cpf" position="floating" color="primary">
+          CPF:
+          <ion-text color="danger" *ngIf="registerForm.controls.cpf.errors">
+            <small *ngIf="registerForm.controls.cpf.errors.required"
+              >* Obrigatório</small
+            >
+            <small *ngIf="registerForm.controls.cpf.errors.pattern"
+              >* Inválido</small
+            >
+          </ion-text>
+        </ion-label>
+        <ion-input
+          type="text"
+          id="cpf"
+          name="cpf"
+          formControlName="cpf"
+        ></ion-input>
+      </ion-item>
+
+<!-- Campo sexo (gender) -->
+<ion-item>
+  <ion-label for="gender" color="primary">
+    Sexo:
+    <ion-text color="danger" *ngIf="registerForm.controls.gender.errors">
+      <small *ngIf="registerForm.controls.gender.errors.required"
+        >* Obrigatório</small
+      >
+    </ion-text>
+  </ion-label>
+  <ion-grid>
+    <ion-row>
+      <ion-col
+        ><label
+          ><input
+            type="radio"
+            formControlName="gender"
+            value="Masculino"
+          />
+          &nbsp;Masculino</label
+        >
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col
+        ><label
+          ><input
+            type="radio"
+            formControlName="gender"
+            value="Feminino"
+          />
+          &nbsp;Feminino</label
+        >
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-item>
+
       <!-- Campo e-mail (email) -->
       <ion-item>
         <ion-label for="email" position="floating" color="primary">
@@ -106,106 +186,7 @@
         ></ion-input>
       </ion-item>
 
-      <ion-item>
-        <ion-label for="address" position="floating" color="primary">
-          Endereço:
-          <ion-text color="danger" *ngIf="registerForm.controls.address.errors">
-            <small *ngIf="registerForm.controls.address.errors.required"
-              >* Obrigatório</small
-            >
-            <small *ngIf="registerForm.controls.address.errors.pattern"
-              >* Inválido</small
-            >
-          </ion-text>
-        </ion-label>
-        <ion-input
-          type="text"
-          id="address"
-          name="address"
-          formControlName="address"
-        ></ion-input>
-      </ion-item>
-
-      <!-- Campo data de nascimento (birth) -->
-      <ion-item>
-        <ion-label for="birth" position="floating" color="primary">
-          Nascimento:
-          <ion-text color="danger" *ngIf="registerForm.controls.birth.errors">
-            <small *ngIf="registerForm.controls.birth.errors.required"
-              >* Obrigatório</small
-            >
-            <small *ngIf="registerForm.controls.birth.errors.pattern"
-              >* Inválido</small
-            >
-          </ion-text>
-        </ion-label>
-        <ion-input
-          type="text"
-          id="birth"
-          name="birth"
-          formControlName="birth"
-        ></ion-input>
-      </ion-item>
-
-      <!-- Campo CPF (cpf) -->
-      <ion-item>
-        <ion-label for="cpf" position="floating" color="primary">
-          CPF:
-          <ion-text color="danger" *ngIf="registerForm.controls.cpf.errors">
-            <small *ngIf="registerForm.controls.cpf.errors.required"
-              >* Obrigatório</small
-            >
-            <small *ngIf="registerForm.controls.cpf.errors.pattern"
-              >* Inválido</small
-            >
-          </ion-text>
-        </ion-label>
-        <ion-input
-          type="text"
-          id="cpf"
-          name="cpf"
-          formControlName="cpf"
-        ></ion-input>
-      </ion-item>
-
-      <!-- Campo sexo (gender) -->
-      <ion-item>
-        <ion-label for="gender" color="primary">
-          Sexo:
-          <ion-text color="danger" *ngIf="registerForm.controls.gender.errors">
-            <small *ngIf="registerForm.controls.gender.errors.required"
-              >* Obrigatório</small
-            >
-          </ion-text>
-        </ion-label>
-        <ion-grid>
-          <ion-row>
-            <ion-col
-              ><label
-                ><input
-                  type="radio"
-                  formControlName="gender"
-                  value="Masculino"
-                />
-                &nbsp;Masculino</label
-              >
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col
-              ><label
-                ><input
-                  type="radio"
-                  formControlName="gender"
-                  value="Feminino"
-                />
-                &nbsp;Feminino</label
-              >
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-item>
-
+      <!-- Campo Profissão' (telephone) -->
       <ion-item>
         <ion-label for="profissao" position="floating" color="primary">
           Profissão:
@@ -225,6 +206,48 @@
           formControlName="profissao"
         ></ion-input>
       </ion-item>
+
+      <!-- Campo Cidade' (city) -->
+      <ion-item>
+        <ion-label for="city" position="floating" color="primary">
+          Cidade:
+          <ion-text color="danger" *ngIf="registerForm.controls.city.errors">
+            <small *ngIf="registerForm.controls.city.errors.required"
+              >* Obrigatório</small
+            >
+            <small *ngIf="registerForm.controls.city.errors.pattern"
+              >* Inválido</small
+            >
+          </ion-text>
+        </ion-label>
+        <ion-input
+          type="text"
+          id="city"
+          name="city"
+          formControlName="city"
+        ></ion-input>
+      </ion-item>
+
+     <!-- Campo Bairro' (district) -->
+     <ion-item>
+      <ion-label for="district" position="floating" color="primary">
+        Bairro:
+        <ion-text color="danger" *ngIf="registerForm.controls.district.errors">
+          <small *ngIf="registerForm.controls.district.errors.required"
+            >* Obrigatório</small
+          >
+          <small *ngIf="registerForm.controls.district.errors.pattern"
+            >* Inválido</small
+          >
+        </ion-text>
+      </ion-label>
+      <ion-input
+        type="text"
+        id="district"
+        name="district"
+        formControlName="district"
+      ></ion-input>
+    </ion-item>
 
       <!-- Campo PCD (pwd) -->
       <ion-item>

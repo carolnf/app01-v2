@@ -45,7 +45,7 @@ export class LoginPage implements OnInit {
                 this.feedback(
                   data.user.displayName,
                   'Você já pode acessar o conteúdo restrito.',
-                  '/user/profile'
+                  '/perfiluser'
                 );
               } else {
                 this.feedback(
@@ -61,7 +61,7 @@ export class LoginPage implements OnInit {
       // Se o login falhar
       .catch(
         (error) => {
-          console.log(error)
+          console.log(error);
         }
       );
   }

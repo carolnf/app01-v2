@@ -221,7 +221,7 @@ export class RegisterPage implements OnInit {
           this.registerForm.reset();
 
           // Vai para perfil
-          this.router.navigate(['/user/profile']);
+          this.router.navigate(['/perfiluser']);
         }
       }]
     });

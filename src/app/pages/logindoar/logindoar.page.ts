@@ -59,7 +59,9 @@ export class LogindoarPage implements OnInit {
           .then((uData) => {
             // Se não tem perfil
             if (uData.exists) {
-              this.router.navigate(['/user/profile']);
+              this.router.navigate(['/logindoar']);
+            } else {
+              this.router.navigate(['/user/register']);
             }
           });
       }
@@ -86,10 +88,7 @@ export class LogindoarPage implements OnInit {
     // Um formulário é um 'agrupamento' (group) de campos...
     this.doarForm = this.form.group({
       uid: [''],
-      nome: [
-        '',
-        Validators.compose([Validators.required, removeSpaces]),
-      ],
+      nome: ['', Validators.compose([Validators.required, removeSpaces])],
       raca: ['', Validators.compose([Validators.required, removeSpaces])],
       idade: ['', Validators.compose([Validators.required])],
       nascimento: ['', Validators.compose([Validators.required])],
@@ -160,7 +159,7 @@ export class LogindoarPage implements OnInit {
             // Vai para perfil
             this.router.navigate(['/perfilpet']);
           },
-        }
+        },
       ],
     });
 

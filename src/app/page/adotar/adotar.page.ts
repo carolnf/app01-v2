@@ -30,26 +30,4 @@ export class AdotarPage implements OnInit {
     });
   }
 
-  ngOnInit() { }
-
-  ionViewWillEnter() {
-    this.auth.onAuthStateChanged((userData) => {
-      if (userData) {
-        this.afs.firestore
-          .doc(`register/${userData.uid}`)
-          .get()
-          .then((uData) => {
-            // Se não tem perfil
-            if (uData.exists) {
-              console.log('gerar whatsapp');
-            } else {
-              this.router.navigate(['/user/register']);
-            }
-          });
-      } else {
-        this.router.navigate(['/user/login']);
-      }
-    });
-  }
-
 }
