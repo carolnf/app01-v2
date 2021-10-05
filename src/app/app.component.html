@@ -40,31 +40,45 @@
             </ion-item>
           </ion-menu-toggle>
 
+
+
+
           <ion-menu-toggle auto-hide="false">
-            <ion-item
-              routerDirection="root"
-              routerLink="/duvidas"
-              lines="none"
-              detail="false"
-              routerLinkActive="selected"
-            >
+            <ion-item routerDirection="root" routerLink="/logindoar" lines="none" detail="false"
+              routerLinkActive="selected">
+              <ion-icon slot="start" name="add-circle"></ion-icon>
+              <ion-label>Doar</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+
+          <ion-menu-toggle auto-hide="false">
+            <ion-item routerDirection="root" (click)="updateCookie()" lines="none" detail="false"
+              routerLinkActive="selected">
+              <ion-icon slot="start" name="paw"></ion-icon>
+              <ion-label>Adotar <ion-badge color="danger" slot="end">{{ showNotifications }}</ion-badge></ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle auto-hide="false">
+            <ion-item routerDirection="root" routerLink="/duvidas" lines="none" detail="false"
+              routerLinkActive="selected">
               <ion-icon slot="start" name="help-circle"></ion-icon>
               <ion-label>Dúvidas</ion-label>
             </ion-item>
           </ion-menu-toggle>
 
+
           <ion-menu-toggle auto-hide="false">
-            <ion-item
-              routerDirection="root"
-              routerLink="/suporte"
-              lines="none"
-              detail="false"
-              routerLinkActive="selected"
-            >
+            <ion-item routerDirection="root" href="https://sites.google.com/view/parada-pet/" target="_blank" lines="none" detail="false"
+              routerLinkActive="selected">
               <ion-icon slot="start" name="information-circle"></ion-icon>
               <ion-label>Suporte</ion-label>
             </ion-item>
           </ion-menu-toggle>
+
+
+
         </ion-list>
       </ion-content>
 

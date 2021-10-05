@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+  <ion-buttons slot="start">
+  <ion-back-button defaultHref="home"></ion-back-button>
+  </ion-buttons>
+
+  <img
+  src="assets/logo.png"
+  style="width: 140px; height: 50px; margin-left: 40px"
+  alt="Parada Pet"
+  routerLink="/home"
+  />
+
+  <!--Pedir ajuda ao professor para resolver <ion-thumbnail slot="end" *ngIf="auth.user | async as user; else showLogin">
+  <img src="{{user.photoURL}}" alt="{{user.displayName}}" routerLink="/profile">
+  </ion-thumbnail>-->
+  <ng-template #showLogin>
+  <ion-thumbnail slot="end">
+  <img
+  src="assets/teste.png"
+  style="width: 8 0px; height: 40px"
+  alt="logue-se"
+  routerLink="/login"
+  />
+  </ion-thumbnail>
+  </ng-template>
+
+
+  </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding-horizontal">
+
+  <ion-img src="assets/Imagem1.png" alt="parabens" class="p"></ion-img>
+  <h5 class="ion-text-center"> Parabéns, você adotou um novo animalzinho, cuide com amor e carinho!</h5>
+
+
+
+  <div class="ion-text-center">
+  <ion-button size="small" color="success" (click)="whatsapp()">
+  <ion-icon name="logo-whatsapp"></ion-icon>ㅤcontato do doador</ion-button>
+
+  </div>
+
+  </ion-content>
+
+  <!-- Footer -->
+
+  <ion-footer>
+  <ion-toolbar>
+  <ion-tabs>
+  <ion-tab-bar slot="bottom">
+  <ion-tab-button routerLink="/home">
+  <ion-icon name="home-outline"></ion-icon>
+  <ion-label>Home</ion-label>
+  </ion-tab-button>
+
+  <ion-tab-button routerLink="/adotar">
+  <ion-icon name="paw-outline"></ion-icon>
+  <ion-label>Adotar</ion-label>
+  </ion-tab-button>
+
+  <ion-tab-button routerLink="/perfiluser">
+  <ion-icon name="person-outline"></ion-icon>
+  <ion-label>Perfil</ion-label>
+  </ion-tab-button>
+  </ion-tab-bar>
+  </ion-tabs>
+  </ion-toolbar>
+  </ion-footer>
+
