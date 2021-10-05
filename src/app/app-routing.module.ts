@@ -44,6 +44,11 @@ const routes: Routes = [
   },
 
   {
+    path: 'fimadotar/:petid',
+    loadChildren: () => import('./page/fimadotar/fimadotar.module').then( m => m.FimadotarPageModule),
+    },
+
+    {
     path: 'perfilpet/:petid',
     loadChildren: () =>
       import('./page/perfilpet/perfilpet.module').then(
@@ -138,6 +143,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./page/e404/e404.module').then((m) => m.E404PageModule),
   },
+  {
+    path: 'fimadotar',
+    loadChildren: () => import('./page/fimadotar/fimadotar.module').then( m => m.FimadotarPageModule)
+  },
+
 ];
 
 @NgModule({
