@@ -31,5 +31,14 @@ export class PerfiluserPage implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit() {}
+
+  // Abre perfil do usuário no Google em outra aba
+  goProfile() {
+    window.open('https://myaccount.google.com/');
+
+    // Na mesma aba
+    // location.href = 'https://myaccount.google.com/';
+    return false;
+  }
 }
