@@ -118,8 +118,8 @@ export class LogindoarPage implements OnInit {
 
     // Salva em um novo documento do Firebase Firestore
     this.afs
-      .collection('doadores')
-      .doc(this.doarForm.value.uid)
+      .collection('animais')
+      .doc(this.doarForm.value.id)
       .set(this.doarForm.value)
       .then(() => {
         // Feedback
@@ -147,7 +147,7 @@ export class LogindoarPage implements OnInit {
             this.doarForm.reset();
 
             // Vai para perfil
-            this.router.navigate(['/profile']);
+            this.router.navigate(['/home']);
           },
         },
         {
@@ -157,7 +157,7 @@ export class LogindoarPage implements OnInit {
             this.doarForm.reset();
 
             // Vai para perfil
-            this.router.navigate(['/perfilpet']);
+            this.router.navigate(['/perfilpet/:petid']);
           },
         },
       ],

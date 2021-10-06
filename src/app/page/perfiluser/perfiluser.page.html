@@ -66,7 +66,7 @@
     </ion-list>
 
       <div>
-        <ion-button size="small" color="light" routerLink="/user/edit" style="margin-left:50px;">
+        <ion-button size="small" color="light" routerLink="/user/edit/{{ (item | async)?.uid }}" style="margin-left:50px;">
           <ion-icon name="open-outline" class="icon" slot="start"></ion-icon>Editar</ion-button>
             <ion-button size="small" color="light" routerLink="/user/logout" style="margin-left:160px; margin-top: -60px;">
               <ion-icon name="log-out-outline" class="icon" slot="start"></ion-icon>Sair</ion-button>

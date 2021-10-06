@@ -27,7 +27,7 @@ export class PerfiluserPage implements OnInit {
     this.auth.onAuthStateChanged((userData) => {
       this.user = userData;
       console.log(this.user.uid);
-      this.item = this.afs.doc(`register/${this.user.uid}`).valueChanges();
+      this.item = this.afs.doc(`register/${this.user.uid}`).valueChanges({idField:'uid'});
     });
   }
 

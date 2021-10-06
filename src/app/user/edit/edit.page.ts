@@ -75,6 +75,7 @@ export class EditPage implements OnInit {
         .then((uData) => {
           // Se tem perfil
           if (uData.exists) {
+            console.log ('oi');
             // Filtra dados do usuário no database
             this.userData = uData.data();
 
@@ -84,15 +85,14 @@ export class EditPage implements OnInit {
             this.registerForm.controls.telephone.setValue(
               this.userData.telephone
             );
-            this.registerForm.controls.whatsapp.setValue(
-              this.userData.whatsapp
-            );
             this.registerForm.controls.birth.setValue(this.userData.birth);
             this.registerForm.controls.cpf.setValue(this.userData.cpf);
-            this.registerForm.controls.address.setValue(this.userData.address);
             this.registerForm.controls.gender.setValue(this.userData.gender);
             this.registerForm.controls.pwd.setValue(this.userData.pwd);
             this.registerForm.controls.uid.setValue(this.userData.uid);
+            this.registerForm.controls.profissao.setValue(this.userData.profissao);
+            this.registerForm.controls.city.setValue(this.userData.city);
+            this.registerForm.controls.district.setValue(this.userData.district);
           }
         });
     }
@@ -140,18 +140,6 @@ export class EditPage implements OnInit {
         ]),
       ],
 
-      // Campo 'Whatsapp' (whatsapp)
-      whatsapp: [
-        '',
-        Validators.compose([
-          Validators.required,
-          Validators.pattern(
-            /^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/
-          ),
-          removeSpaces,
-        ]),
-      ],
-
       // Campo data de nascimento (birth)
       birth: [
         '',
@@ -176,14 +164,17 @@ export class EditPage implements OnInit {
       // Campo sexo (gender)
       gender: ['', Validators.compose([Validators.required])],
 
-      // Campo endereço (address)
-      address: ['', Validators.compose([Validators.required])],
-
       // Campo PCD (pwd)
       pwd: [false],
 
       // Id do usuário logado (uid)
       uid: [''],
+
+      profissao: ['', Validators.compose([Validators.required])],
+
+      city: ['', Validators.compose([Validators.required])],
+
+      district: ['', Validators.compose([Validators.required])],
     });
   }
 

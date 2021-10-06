@@ -87,7 +87,7 @@ const routes: Routes = [
     data: { authGuardPipe: toLogin },
   },
   {
-    path: 'user/edit',
+    path: 'user/edit/:id',
     loadChildren: () =>
       import('./user/edit/edit.module').then((m) => m.EditPageModule),
     // Só acessa se estiver logado
