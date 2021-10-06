@@ -2,19 +2,26 @@
 
 <ion-header>
   <ion-toolbar>
-
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
 
-    <img src="assets/logo.png" style="width: 140px; height: 50px; margin-left: 40px;" alt="Parada Pet" routerLink="/home">
+    <img
+      src="assets/logo.png"
+      style="width: 140px; height: 50px; margin-left: 40px"
+      alt="Parada Pet"
+      routerLink="/home"
+    />
     <ng-template #showLogin>
       <ion-thumbnail slot="end">
-        <img src="assets/teste.png" style="width: 8
-        0px; height: 40px;" alt="logue-se" routerLink="/login">
+        <img
+          src="assets/teste.png"
+          style="width: 8 0px; height: 40px"
+          alt="logue-se"
+          routerLink="/login"
+        />
       </ion-thumbnail>
     </ng-template>
-
   </ion-toolbar>
 </ion-header>
 
@@ -34,11 +41,9 @@
 
   <form [formGroup]="adotarForm" (ngSubmit)="registerSend()">
     <ion-list lines="full" class="ion-no-padding">
-
       <!-- Campo nome (name) -->
-      <br>Sobre a Familia:<ion-item>
+      <br />Sobre a Familia:<ion-item>
         <ion-label for="sobre" position="floating" color="primary">
-
           <ion-text color="danger" *ngIf="adotarForm.controls.sobre.errors">
             <small *ngIf="adotarForm.controls.sobre.errors.required"
               >* Obrigatório</small
@@ -56,158 +61,175 @@
         ></ion-input>
       </ion-item>
 
- <!-- Campo e-mail (email) -->
- <br>Quantas pessoas moram em sua residência? <ion-item>
-
-  <ion-label for="quantidade" position="floating" color="primary">
-
-    <ion-text color="danger" *ngIf="adotarForm.controls.quantidade.errors">
-      <small *ngIf="adotarForm.controls.quantidade.errors.required"
-        >* Obrigatório</small
-      >
-    </ion-text>
-  </ion-label>
-  <ion-input
-    type="text"
-    id="quantidade"
-    name="quantidade"
-    formControlName="quantidade"
-  ></ion-input>
-</ion-item>
-
- <!-- Campo Telefone' (telephone) -->
- <br><div>Já tiveram contato com algum animal?</div><ion-item>
-  <ion-label for="contatoanimal" color="primary">
-
-    <ion-text color="danger" *ngIf="adotarForm.controls.contatoanimal.errors">
-      <small *ngIf="adotarForm.controls.contatoanimal.errors.required"
-        >* Obrigatório</small
-      >
-    </ion-text>
-  </ion-label>
-  <ion-grid>
-    <ion-row>
-      <ion-col
-        ><label
-          ><input
-            type="radio"
-            formControlName="contatoanimal"
-            value="Sim"
-          />
-          &nbsp;Sim</label
-        >
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col
-        ><label
-          ><input
-            type="radio"
-            formControlName="contatoanimal"
-            value="Não"
-          />
-          &nbsp;Não</label
-        >
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-item>
-
-<br><div>Qual tipo de residência mora?</div><ion-item>
-  <ion-label for="residencia" color="primary">
-
-    <ion-text color="danger" *ngIf="adotarForm.controls.residencia.errors">
-      <small *ngIf="adotarForm.controls.residencia.errors.required"
-        >* Obrigatório</small
-      >
-    </ion-text>
-  </ion-label>
-  <ion-grid>
-    <ion-row>
-      <ion-col
-        ><label
-          ><input
-            type="radio"
-            formControlName="residencia"
-            value="Casa"
-          />
-          &nbsp;Casa</label
-        >
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col
-        ><label
-          ><input
-            type="radio"
-            formControlName="residencia"
-            value="Apartamento"
-          />
-          &nbsp;Apart.</label
-        >
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-item>
-
-  <!-- Campo data de nascimento (birth) -->
-  <br><div> Quantas horas por dia o animal ficará sozinho?</div><ion-item>
-    <ion-label for="horasanimal" position="floating" color="primary">
-
-      <ion-text color="danger" *ngIf="adotarForm.controls.horasanimal.errors">
-        <small *ngIf="adotarForm.controls.horasanimal.errors.required"
-          >* Obrigatório</small
+      <!-- Campo e-mail (email) -->
+      <br />Quantas pessoas moram em sua residência?
+      <ion-item>
+        <ion-label for="quantidade" position="floating" color="primary">
+          <ion-text
+            color="danger"
+            *ngIf="adotarForm.controls.quantidade.errors"
           >
-      </ion-text>
-    </ion-label>
-    <ion-input
-      type="text"
-      id="horasanimal"
-      name="horasanimal"
-      formControlName="horasanimal"
-    ></ion-input>
-  </ion-item>
+            <small *ngIf="adotarForm.controls.quantidade.errors.required"
+              >* Obrigatório</small
+            >
+          </ion-text>
+        </ion-label>
+        <ion-input
+          type="text"
+          id="quantidade"
+          name="quantidade"
+          formControlName="quantidade"
+        ></ion-input>
+      </ion-item>
 
-  <br><div> Concorda que um voluntário poderá ir até sua casa,
-    conhecer você e sua família, e o local onde o animal ficará,
-    entregando-o pessoalmente?</div><ion-item>
-    <ion-label for="visitavoluntario" color="primary">
-
-      <ion-text color="danger" *ngIf="adotarForm.controls.visitavoluntario.errors">
-        <small *ngIf="adotarForm.controls.visitavoluntario.errors.required"
-          >* Obrigatório</small
-        >
-      </ion-text>
-    </ion-label>
-    <ion-grid>
-      <ion-row>
-        <ion-col
-          ><label
-            ><input
-              type="radio"
-              formControlName="visitavoluntario"
-              value="Sim"
-            />
-            &nbsp;Sim</label
+      <!-- Campo Telefone' (telephone) -->
+      <br />
+      <div>Já tiveram contato com algum animal?</div>
+      <ion-item>
+        <ion-label for="contatoanimal" color="primary">
+          <ion-text
+            color="danger"
+            *ngIf="adotarForm.controls.contatoanimal.errors"
           >
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col
-          ><label
-            ><input
-              type="radio"
-              formControlName="visitavoluntario"
-              value="Não"
-            />
-            &nbsp;Não</label
+            <small *ngIf="adotarForm.controls.contatoanimal.errors.required"
+              >* Obrigatório</small
+            >
+          </ion-text>
+        </ion-label>
+        <ion-grid>
+          <ion-row>
+            <ion-col
+              ><label
+                ><input
+                  type="radio"
+                  formControlName="contatoanimal"
+                  value="Sim"
+                />
+                &nbsp;Sim</label
+              >
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col
+              ><label
+                ><input
+                  type="radio"
+                  formControlName="contatoanimal"
+                  value="Não"
+                />
+                &nbsp;Não</label
+              >
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+      <br />
+      <div>Qual tipo de residência mora?</div>
+      <ion-item>
+        <ion-label for="residencia" color="primary">
+          <ion-text
+            color="danger"
+            *ngIf="adotarForm.controls.residencia.errors"
           >
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-item>
+            <small *ngIf="adotarForm.controls.residencia.errors.required"
+              >* Obrigatório</small
+            >
+          </ion-text>
+        </ion-label>
+        <ion-grid>
+          <ion-row>
+            <ion-col
+              ><label
+                ><input
+                  type="radio"
+                  formControlName="residencia"
+                  value="Casa"
+                />
+                &nbsp;Casa</label
+              >
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col
+              ><label
+                ><input
+                  type="radio"
+                  formControlName="residencia"
+                  value="Apartamento"
+                />
+                &nbsp;Apart.</label
+              >
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
 
+      <!-- Campo data de nascimento (birth) -->
+      <br />
+      <div>Quantas horas por dia o animal ficará sozinho?</div>
+      <ion-item>
+        <ion-label for="horasanimal" position="floating" color="primary">
+          <ion-text
+            color="danger"
+            *ngIf="adotarForm.controls.horasanimal.errors"
+          >
+            <small *ngIf="adotarForm.controls.horasanimal.errors.required"
+              >* Obrigatório</small
+            >
+          </ion-text>
+        </ion-label>
+        <ion-input
+          type="text"
+          id="horasanimal"
+          name="horasanimal"
+          formControlName="horasanimal"
+        ></ion-input>
+      </ion-item>
 
+      <br />
+      <div>
+        Concorda que um voluntário poderá ir até sua casa, conhecer você e sua
+        família, e o local onde o animal ficará, entregando-o pessoalmente?
+      </div>
+      <ion-item>
+        <ion-label for="visitavoluntario" color="primary">
+          <ion-text
+            color="danger"
+            *ngIf="adotarForm.controls.visitavoluntario.errors"
+          >
+            <small *ngIf="adotarForm.controls.visitavoluntario.errors.required"
+              >* Obrigatório</small
+            >
+          </ion-text>
+        </ion-label>
+        <ion-grid>
+          <ion-row>
+            <ion-col
+              ><label
+                ><input
+                  type="radio"
+                  formControlName="visitavoluntario"
+                  value="Sim"
+                />
+                &nbsp;Sim</label
+              >
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col
+              ><label
+                ><input
+                  type="radio"
+                  formControlName="visitavoluntario"
+                  value="Não"
+                />
+                &nbsp;Não</label
+              >
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
     </ion-list>
 
     <ion-button
@@ -231,19 +253,11 @@
           <ion-label>Home</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button routerLink="/adotar">
-          <ion-icon name="paw-outline"></ion-icon>
-          <ion-label>Adotar</ion-label>
+        <ion-tab-button routerLink="/perfiluser">
+          <ion-icon name="person-outline"></ion-icon>
+          <ion-label>Perfil</ion-label>
         </ion-tab-button>
-
-        <ion-tab-button routerLink="/login">
-          <ion-icon name="notifications-outline"></ion-icon>
-          <ion-label>Notificação</ion-label>
-        </ion-tab-button>
-
       </ion-tab-bar>
     </ion-tabs>
   </ion-toolbar>
 </ion-footer>
-
-

@@ -93,6 +93,7 @@ export class LogindoarPage implements OnInit {
       idade: ['', Validators.compose([Validators.required])],
       nascimento: ['', Validators.compose([Validators.required])],
       especie: ['', Validators.compose([Validators.required, removeSpaces])],
+      sexo: ['', Validators.compose([Validators.required, removeSpaces])],
       vacina: [''],
       datainclusao: [
         '',
@@ -100,7 +101,7 @@ export class LogindoarPage implements OnInit {
       ],
       descricao: ['', Validators.compose([Validators.required, removeSpaces])],
       doador: ['', Validators.compose([Validators.required, removeSpaces])],
-      fotodoanimal: [''],
+      foto: [''],
       motivodadoacao: [
         '',
         Validators.compose([Validators.required, removeSpaces]),
@@ -148,16 +149,6 @@ export class LogindoarPage implements OnInit {
 
             // Vai para perfil
             this.router.navigate(['/home']);
-          },
-        },
-        {
-          text: 'Ver Perfil',
-          handler: () => {
-            // Reset do formulário
-            this.doarForm.reset();
-
-            // Vai para perfil
-            this.router.navigate(['/perfilpet/:petid']);
           },
         },
       ],

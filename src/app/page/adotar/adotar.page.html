@@ -29,9 +29,18 @@
 <!-- BODY -->
 
 <ion-content class="ion-padding-horizontal">
-
-  <ion-item routerLink="/perfilpet" class="item" *ngFor="let item of items | async" routerLink="/perfilpet/{{ item.id }}" class="fonte">
-        <ion-thumbnail slot="start" class="list-img" style="background-image: url('{{ item.foto }}');">
+  <ion-item
+    routerLink="/perfilpet"
+    class="item"
+    *ngFor="let item of items | async"
+    routerLink="/perfilpet/{{ item.id }}"
+    class="fonte"
+  >
+    <ion-thumbnail
+      slot="start"
+      class="list-img"
+      style="background-image: url('{{ item.foto }}');"
+    >
     </ion-thumbnail>
     <ion-label>
       <h5 class="h5">{{ item.nome }}</h5>
@@ -39,9 +48,8 @@
       <p>Idade: {{item.idade}}</p>
       <p>Sexo: {{item.sexo}}</p>
       <h5 class="h5">Espécie: {{item.especie}}</h5>
-      </ion-label>
+    </ion-label>
   </ion-item>
-
 </ion-content>
 
 <!-- Footer -->
@@ -55,18 +63,11 @@
           <ion-label>Home</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button routerLink="/adotar">
-          <ion-icon name="paw-outline"></ion-icon>
-          <ion-label>Adotar</ion-label>
-        </ion-tab-button>
-
-        <ion-tab-button routerLink="/login">
+        <ion-tab-button routerLink="/perfiluser">
           <ion-icon name="person-outline"></ion-icon>
-          <ion-label>Notificação</ion-label>
+          <ion-label>Perfil</ion-label>
         </ion-tab-button>
-
       </ion-tab-bar>
     </ion-tabs>
   </ion-toolbar>
 </ion-footer>
-

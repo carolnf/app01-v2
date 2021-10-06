@@ -41,7 +41,11 @@
     <ion-item class="fonte">
       <ion-icon name="balloon-outline" class="icon"></ion-icon>
       <ion-label>Idade: {{ (item | async)?.idade }} </ion-label>
-      <ion-icon name="male-female-outline" class="icon2"></ion-icon>
+      </ion-item>
+      </ion-list>
+      <ion-list>
+      <ion-item class="fonte">
+      <ion-icon name="male-female-outline" class="icon"></ion-icon>
       <ion-label>Sexo: {{ (item | async)?.sexo }}</ion-label>
     </ion-item>
   </ion-list>
@@ -49,7 +53,11 @@
     <ion-item class="fonte">
       <ion-icon name="pricetag-outline" class="icon"></ion-icon>
       <ion-label>Espécie: {{ (item | async)?.especie }}</ion-label>
-      <ion-icon name="pin-outline" class="icon2"></ion-icon>
+      </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item class="fonte">
+      <ion-icon name="pin-outline" class="icon"></ion-icon>
       <ion-label>Raça: {{ (item | async)?.raca }}</ion-label>
     </ion-item>
   </ion-list>
@@ -99,18 +107,13 @@
           <ion-label>Home</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button routerLink="/adotar">
-          <ion-icon name="paw-outline"></ion-icon>
-          <ion-label>Adotar</ion-label>
-        </ion-tab-button>
-
-        <ion-tab-button routerLink="/login">
+        <ion-tab-button routerLink="/perfiluser">
           <ion-icon name="person-outline"></ion-icon>
           <ion-label>Perfil</ion-label>
         </ion-tab-button>
-
       </ion-tab-bar>
     </ion-tabs>
   </ion-toolbar>
 </ion-footer>
+
 

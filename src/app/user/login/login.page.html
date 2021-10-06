@@ -2,26 +2,32 @@
 
 <ion-header>
   <ion-toolbar>
-
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
 
-    <img src="assets/logo.png" style="width: 140px; height: 50px; margin-left: 40px;" alt="Parada Pet" routerLink="/home">
+    <img
+      src="assets/logo.png"
+      style="width: 140px; height: 50px; margin-left: 40px"
+      alt="Parada Pet"
+      routerLink="/home"
+    />
     <ng-template #showLogin>
       <ion-thumbnail slot="end">
-        <img src="assets/teste.png" style="width: 8
-        0px; height: 40px;" alt="logue-se" routerLink="/login">
+        <img
+          src="assets/teste.png"
+          style="width: 8 0px; height: 40px"
+          alt="logue-se"
+          routerLink="/login"
+        />
       </ion-thumbnail>
     </ng-template>
-
   </ion-toolbar>
 </ion-header>
 
 <!-- BODY -->
 
 <ion-content class="ion-padding-horizontal">
-
   <h1>Login / Entrar</h1>
 
   <div class="header-img">
@@ -32,9 +38,7 @@
     <ion-icon name="logo-google" slot="start"></ion-icon>
     Entrar com o Google
   </ion-button>
-
 </ion-content>
-
 
 <!-- Footer -->
 
@@ -47,18 +51,11 @@
           <ion-label>Home</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button routerLink="/adotar">
-          <ion-icon name="paw-outline"></ion-icon>
-          <ion-label>Adotar</ion-label>
+        <ion-tab-button routerLink="/perfiluser">
+          <ion-icon name="person-outline"></ion-icon>
+          <ion-label>Perfil</ion-label>
         </ion-tab-button>
-
-        <ion-tab-button routerLink="/login">
-          <ion-icon name="notifications-outline"></ion-icon>
-          <ion-label>Notificação</ion-label>
-        </ion-tab-button>
-
       </ion-tab-bar>
     </ion-tabs>
   </ion-toolbar>
 </ion-footer>
-

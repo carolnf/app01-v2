@@ -216,7 +216,7 @@ export class EditPage implements OnInit {
             this.registerForm.reset();
 
             // Redireciona para profile
-            this.router.navigate(['/user/profile']);
+            this.router.navigate(['/perfiluser']);
           },
         },
       ],

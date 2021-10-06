@@ -2,20 +2,33 @@
 
 <ion-header>
   <ion-toolbar>
-
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
 
-    <img src="assets/logo.png" style="width: 140px; height: 50px; margin-left: 40px;" alt="Parada Pet" routerLink="/home">
+    <img
+      src="assets/logo.png"
+      style="width: 140px; height: 50px; margin-left: 40px"
+      alt="Parada Pet"
+      routerLink="/home"
+    />
 
+    <ng-template #showLogin>
+      <ion-thumbnail slot="end">
+        <img
+          src="assets/teste.png"
+          style="width: 8 0px; height: 40px"
+          alt="logue-se"
+          routerLink="/login"
+        />
+      </ion-thumbnail>
+    </ng-template>
   </ion-toolbar>
 </ion-header>
 
 <!-- BODY -->
 
 <ion-content class="ion-padding-horizontal">
-
   <ion-img src="assets/404error.jpg" alt="Erro 404"></ion-img>
 
   <p>O conteúdo que você está tentando acessar não pode ser encontrado.</p>
@@ -26,7 +39,6 @@
       Início
     </ion-button>
   </p>
-
 </ion-content>
 
 <!-- Footer -->
@@ -36,13 +48,8 @@
     <ion-tabs>
       <ion-tab-bar slot="bottom">
         <ion-tab-button routerLink="/home">
-          <ion-icon name="paw-outline"></ion-icon>
+          <ion-icon name="home-outline"></ion-icon>
           <ion-label>Home</ion-label>
-        </ion-tab-button>
-
-        <ion-tab-button routerLink="/adotar">
-          <ion-icon name="paw-outline"></ion-icon>
-          <ion-label>Adotar</ion-label>
         </ion-tab-button>
 
         <ion-tab-button routerLink="/perfiluser">

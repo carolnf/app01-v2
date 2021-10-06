@@ -2,17 +2,25 @@
 
 <ion-header>
   <ion-toolbar>
-
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
 
-    <img src="assets/logo.png" style="width: 140px; height: 50px; margin-left: 40px;" alt="Parada Pet" routerLink="/home">
+    <img
+      src="assets/logo.png"
+      style="width: 140px; height: 50px; margin-left: 40px"
+      alt="Parada Pet"
+      routerLink="/home"
+    />
 
     <ng-template #showLogin>
       <ion-thumbnail slot="end">
-        <img src="assets/teste.png" style="width: 8
-        0px; height: 40px;" alt="logue-se" routerLink="/login">
+        <img
+          src="assets/teste.png"
+          style="width: 8 0px; height: 40px"
+          alt="logue-se"
+          routerLink="/login"
+        />
       </ion-thumbnail>
     </ng-template>
   </ion-toolbar>
@@ -21,58 +29,72 @@
 <!-- BODY -->
 
 <ion-content class="ion-padding-horizontal" *ngIf="item">
-
   <div *ngIf="auth.user | async as user">
+    <img
+      src="{{ user.photoURL }}"
+      style="width: 160px; height: 160px; margin-left: 60px; margin-top: 20px"
+      alt="{{user.displayName}}"
+    />
+  </div>
+  <ion-list>
+    <ion-item class="fonte">
+      <ion-icon name="balloon-outline" class="icon"></ion-icon>
+      <ion-label>Nome: {{user.displayName}} </ion-label>
+    </ion-item>
+    <ion-item class="fonte">
+      <ion-icon name="male-female-outline" class="icon"></ion-icon>
+      <ion-label>Nascimento: {{ (item | async)?.birth }}</ion-label>
+    </ion-item>
+    <ion-item class="fonte">
+      <ion-icon name="balloon-outline" class="icon"></ion-icon>
+      <ion-label>CPF: {{ (item | async)?.cpf }} </ion-label>
+    </ion-item>
+    <ion-item class="fonte">
+      <ion-icon name="male-female-outline" class="icon"></ion-icon>
+      <ion-label>Sexo: {{ (item | async)?.gender }}</ion-label>
+    </ion-item>
+    <ion-item class="fonte">
+      <ion-icon name="balloon-outline" class="icon"></ion-icon>
+      <ion-label>Email: {{user.email}} </ion-label>
+    </ion-item>
+    <ion-item class="fonte">
+      <ion-icon name="male-female-outline" class="icon"></ion-icon>
+      <ion-label>Telefone: {{ (item | async)?.telephone }}</ion-label>
+    </ion-item>
+    <ion-item class="fonte">
+      <ion-icon name="balloon-outline" class="icon"></ion-icon>
+      <ion-label>Profissão: {{ (item | async)?.profissao }} </ion-label>
+    </ion-item>
+    <ion-item class="fonte">
+      <ion-icon name="male-female-outline" class="icon"></ion-icon>
+      <ion-label>Cidade: {{ (item | async)?.city }}</ion-label>
+    </ion-item>
+    <ion-item class="fonte">
+      <ion-icon name="male-female-outline" class="icon"></ion-icon>
+      <ion-label>Bairro: {{ (item | async)?.district }}</ion-label>
+    </ion-item>
+  </ion-list>
 
-      <img src="{{ user.photoURL }}" style="width: 160px; height: 160px; margin-left: 60px; margin-top: 20px;" alt="{{user.displayName}}">
-    </div>
-    <ion-list>
-      <ion-item class="fonte">
-        <ion-icon name="balloon-outline" class="icon"></ion-icon>
-        <ion-label>Nome: {{user.displayName}} </ion-label>
-      </ion-item>
-      <ion-item class="fonte">
-        <ion-icon name="male-female-outline" class="icon"></ion-icon>
-        <ion-label>Nascimento: {{ (item | async)?.birth }}</ion-label>
-      </ion-item>
-      <ion-item class="fonte">
-        <ion-icon name="balloon-outline" class="icon"></ion-icon>
-        <ion-label>CPF: {{ (item | async)?.cpf }} </ion-label>
-      </ion-item>
-      <ion-item class="fonte">
-        <ion-icon name="male-female-outline" class="icon"></ion-icon>
-        <ion-label>Sexo: {{ (item | async)?.gender }}</ion-label>
-      </ion-item>
-      <ion-item class="fonte">
-        <ion-icon name="balloon-outline" class="icon"></ion-icon>
-        <ion-label>Email: {{user.email}} </ion-label>
-      </ion-item>
-      <ion-item class="fonte">
-        <ion-icon name="male-female-outline" class="icon"></ion-icon>
-        <ion-label>Telefone: {{ (item | async)?.telephone }}</ion-label>
-      </ion-item>
-      <ion-item class="fonte">
-        <ion-icon name="balloon-outline" class="icon"></ion-icon>
-        <ion-label>Profissão: {{ (item | async)?.profissao }} </ion-label>
-      </ion-item>
-      <ion-item class="fonte">
-        <ion-icon name="male-female-outline" class="icon"></ion-icon>
-        <ion-label>Cidade: {{ (item | async)?.city }}</ion-label>
-      </ion-item>
-      <ion-item class="fonte">
-        <ion-icon name="male-female-outline" class="icon"></ion-icon>
-        <ion-label>Bairro: {{ (item | async)?.district }}</ion-label>
-      </ion-item>
-    </ion-list>
-
-      <div>
-        <ion-button size="small" color="light" routerLink="/user/edit/{{ (item | async)?.uid }}" style="margin-left:50px;">
-          <ion-icon name="open-outline" class="icon" slot="start"></ion-icon>Editar</ion-button>
-            <ion-button size="small" color="light" routerLink="/user/logout" style="margin-left:160px; margin-top: -60px;">
-              <ion-icon name="log-out-outline" class="icon" slot="start"></ion-icon>Sair</ion-button>
-              </div>
-
-
+  <div>
+    <ion-button
+      size="small"
+      color="light"
+      routerLink="/user/edit/{{ (item | async)?.uid }}"
+      style="margin-left: 50px"
+    >
+      <ion-icon name="open-outline" class="icon" slot="start"></ion-icon
+      >Editar</ion-button
+    >
+    <ion-button
+      size="small"
+      color="light"
+      routerLink="/user/logout"
+      style="margin-left: 160px; margin-top: -60px"
+    >
+      <ion-icon name="log-out-outline" class="icon" slot="start"></ion-icon
+      >Sair</ion-button
+    >
+  </div>
 </ion-content>
 
 <!-- Footer -->
@@ -86,19 +108,11 @@
           <ion-label>Home</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button routerLink="/adotar">
-          <ion-icon name="paw-outline"></ion-icon>
-          <ion-label>Adotar</ion-label>
+        <ion-tab-button routerLink="/perfiluser">
+          <ion-icon name="person-outline"></ion-icon>
+          <ion-label>Perfil</ion-label>
         </ion-tab-button>
-
-        <ion-tab-button routerLink="/login">
-          <ion-icon name="notifications-outline"></ion-icon>
-          <ion-label>Notificação</ion-label>
-        </ion-tab-button>
-
       </ion-tab-bar>
     </ion-tabs>
   </ion-toolbar>
 </ion-footer>
-
-

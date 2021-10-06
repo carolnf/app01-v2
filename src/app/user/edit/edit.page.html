@@ -2,45 +2,62 @@
 
 <ion-header>
   <ion-toolbar>
-
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
 
-    <img src="assets/logo.png" style="width: 140px; height: 50px; margin-left: 40px;" alt="Parada Pet" routerLink="/home">
+    <img
+      src="assets/logo.png"
+      style="width: 140px; height: 50px; margin-left: 40px"
+      alt="Parada Pet"
+      routerLink="/home"
+    />
     <ng-template #showLogin>
       <ion-thumbnail slot="end">
-        <img src="assets/teste.png" style="width: 8
-        0px; height: 40px;" alt="logue-se" routerLink="/login">
+        <img
+          src="assets/teste.png"
+          style="width: 8 0px; height: 40px"
+          alt="logue-se"
+          routerLink="/login"
+        />
       </ion-thumbnail>
     </ng-template>
-
   </ion-toolbar>
 </ion-header>
 
 <!-- BODY -->
 <ion-content class="ion-no-padding ion-padding-horizontal">
-
-  <p>Edite apenas os campos necessários. Você será responsável caso preencha
-    informações incorretas ou inverídicas.</p>
+  <p>
+    Edite apenas os campos necessários. Você será responsável caso preencha
+    informações incorretas ou inverídicas.
+  </p>
   <p class="ion-text-center">
-    <ion-text color="danger"><small>Todos os campos são obrigatórios.</small></ion-text>
+    <ion-text color="danger"
+      ><small>Todos os campos são obrigatórios.</small></ion-text
+    >
   </p>
 
   <form [formGroup]="registerForm" (ngSubmit)="registerSend()">
-
     <ion-list lines="full" class="ion-no-padding">
-
       <!-- Campo nome (name) -->
       <ion-item>
         <ion-label for="name" position="floating" color="primary">
           Nome:
           <ion-text color="danger" *ngIf="registerForm.controls.name.errors">
-            <small *ngIf="registerForm.controls.name.errors.required">* Obrigatório</small>
-            <small *ngIf="registerForm.controls.name.errors.minlength">* Inválido</small>
+            <small *ngIf="registerForm.controls.name.errors.required"
+              >* Obrigatório</small
+            >
+            <small *ngIf="registerForm.controls.name.errors.minlength"
+              >* Inválido</small
+            >
           </ion-text>
         </ion-label>
-        <ion-input type="text" id="name" name="name" formControlName="name"></ion-input>
+        <ion-input
+          type="text"
+          id="name"
+          name="name"
+          formControlName="name"
+        ></ion-input>
       </ion-item>
 
       <!-- Campo data de nascimento (birth) -->
@@ -48,40 +65,76 @@
         <ion-label for="birth" position="floating" color="primary">
           Nascimento:
           <ion-text color="danger" *ngIf="registerForm.controls.birth.errors">
-            <small *ngIf="registerForm.controls.birth.errors.required">* Obrigatório</small>
-            <small *ngIf="registerForm.controls.birth.errors.pattern">* Inválido</small>
+            <small *ngIf="registerForm.controls.birth.errors.required"
+              >* Obrigatório</small
+            >
+            <small *ngIf="registerForm.controls.birth.errors.pattern"
+              >* Inválido</small
+            >
           </ion-text>
         </ion-label>
-        <ion-input type="text" id="birth" name="birth" formControlName="birth"></ion-input>
+        <ion-input
+          type="text"
+          id="birth"
+          name="birth"
+          formControlName="birth"
+        ></ion-input>
       </ion-item>
 
-       <!-- Campo CPF (cpf) -->
-       <ion-item>
+      <!-- Campo CPF (cpf) -->
+      <ion-item>
         <ion-label for="cpf" position="floating" color="primary">
           CPF:
           <ion-text color="danger" *ngIf="registerForm.controls.cpf.errors">
-            <small *ngIf="registerForm.controls.cpf.errors.required">* Obrigatório</small>
-            <small *ngIf="registerForm.controls.cpf.errors.pattern">* Inválido</small>
+            <small *ngIf="registerForm.controls.cpf.errors.required"
+              >* Obrigatório</small
+            >
+            <small *ngIf="registerForm.controls.cpf.errors.pattern"
+              >* Inválido</small
+            >
           </ion-text>
         </ion-label>
-        <ion-input type="text" id="cpf" name="cpf" formControlName="cpf"></ion-input>
+        <ion-input
+          type="text"
+          id="cpf"
+          name="cpf"
+          formControlName="cpf"
+        ></ion-input>
       </ion-item>
 
-       <!-- Campo sexo (gender) -->
-       <ion-item>
+      <!-- Campo sexo (gender) -->
+      <ion-item>
         <ion-label for="gender" color="primary">
           Sexo:
           <ion-text color="danger" *ngIf="registerForm.controls.gender.errors">
-            <small *ngIf="registerForm.controls.gender.errors.required">* Obrigatório</small>
+            <small *ngIf="registerForm.controls.gender.errors.required"
+              >* Obrigatório</small
+            >
           </ion-text>
         </ion-label>
         <ion-grid>
           <ion-row>
-            <ion-col><label><input type="radio" formControlName="gender" value="Masculino"> &nbsp;Masculino</label>
+            <ion-col
+              ><label
+                ><input
+                  type="radio"
+                  formControlName="gender"
+                  value="Masculino"
+                />
+                &nbsp;Masculino</label
+              >
             </ion-col>
           </ion-row>
           <ion-row>
-            <ion-col><label><input type="radio" formControlName="gender" value="Feminino"> &nbsp;Feminino</label>
+            <ion-col
+              ><label
+                ><input
+                  type="radio"
+                  formControlName="gender"
+                  value="Feminino"
+                />
+                &nbsp;Feminino</label
+              >
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -92,34 +145,65 @@
         <ion-label for="email" position="floating" color="primary">
           E-mail:
           <ion-text color="danger" *ngIf="registerForm.controls.email.errors">
-            <small *ngIf="registerForm.controls.email.errors.required">* Obrigatório</small>
-            <small *ngIf="registerForm.controls.email.errors.email">* Inválido</small>
+            <small *ngIf="registerForm.controls.email.errors.required"
+              >* Obrigatório</small
+            >
+            <small *ngIf="registerForm.controls.email.errors.email"
+              >* Inválido</small
+            >
           </ion-text>
         </ion-label>
-        <ion-input type="text" id="email" name="email" formControlName="email"></ion-input>
+        <ion-input
+          type="text"
+          id="email"
+          name="email"
+          formControlName="email"
+        ></ion-input>
       </ion-item>
 
       <!-- Campo Telefone' (telephone) -->
       <ion-item>
         <ion-label for="telephone" position="floating" color="primary">
           Telefone:
-          <ion-text color="danger" *ngIf="registerForm.controls.telephone.errors">
-            <small *ngIf="registerForm.controls.telephone.errors.required">* Obrigatório</small>
-            <small *ngIf="registerForm.controls.telephone.errors.pattern">* Inválido</small>
+          <ion-text
+            color="danger"
+            *ngIf="registerForm.controls.telephone.errors"
+          >
+            <small *ngIf="registerForm.controls.telephone.errors.required"
+              >* Obrigatório</small
+            >
+            <small *ngIf="registerForm.controls.telephone.errors.pattern"
+              >* Inválido</small
+            >
           </ion-text>
         </ion-label>
-        <ion-input type="text" id="telephone" name="telephone" formControlName="telephone"></ion-input>
+        <ion-input
+          type="text"
+          id="telephone"
+          name="telephone"
+          formControlName="telephone"
+        ></ion-input>
       </ion-item>
 
       <!-- Campo 'profissao' (profissao) -->
       <ion-item>
         <ion-label for="profissao" position="floating" color="primary">
           Profissão:
-          <ion-text color="danger" *ngIf="registerForm.controls.profissao.errors">
-            <small *ngIf="registerForm.controls.profissao.errors.required">* Obrigatório</small>Kw
+          <ion-text
+            color="danger"
+            *ngIf="registerForm.controls.profissao.errors"
+          >
+            <small *ngIf="registerForm.controls.profissao.errors.required"
+              >* Obrigatório</small
+            >Kw
           </ion-text>
         </ion-label>
-        <ion-input type="text" id="profissao" name="profissao" formControlName="profissao"></ion-input>
+        <ion-input
+          type="text"
+          id="profissao"
+          name="profissao"
+          formControlName="profissao"
+        ></ion-input>
       </ion-item>
 
       <!-- Campo Cidade (city) -->
@@ -127,38 +211,62 @@
         <ion-label for="city" position="floating" color="primary">
           Cidade:
           <ion-text color="danger" *ngIf="registerForm.controls.city.errors">
-            <small *ngIf="registerForm.controls.city.errors.required">* Obrigatório</small>
+            <small *ngIf="registerForm.controls.city.errors.required"
+              >* Obrigatório</small
+            >
           </ion-text>
         </ion-label>
-        <ion-textarea type="text" id="city" name="city" formControlName="city" autoGrow="true"></ion-textarea>
+        <ion-textarea
+          type="text"
+          id="city"
+          name="city"
+          formControlName="city"
+          autoGrow="true"
+        ></ion-textarea>
       </ion-item>
 
       <!-- Campo Bairro (district) -->
       <ion-item>
         <ion-label for="district" position="floating" color="primary">
           Bairro:
-          <ion-text color="danger" *ngIf="registerForm.controls.district.errors">
-            <small *ngIf="registerForm.controls.district.errors.required">* Obrigatório</small>
+          <ion-text
+            color="danger"
+            *ngIf="registerForm.controls.district.errors"
+          >
+            <small *ngIf="registerForm.controls.district.errors.required"
+              >* Obrigatório</small
+            >
           </ion-text>
         </ion-label>
-        <ion-textarea type="text" id="district" name="district" formControlName="district" autoGrow="true"></ion-textarea>
+        <ion-textarea
+          type="text"
+          id="district"
+          name="district"
+          formControlName="district"
+          autoGrow="true"
+        ></ion-textarea>
       </ion-item>
 
       <!-- Campo PCD (pwd) -->
       <ion-item>
-        <ion-label for="pwd" color="primary">
-          PCD:
-        </ion-label>
-        <ion-toggle id="pwd" name="pwd" formControlName="pwd" checked></ion-toggle>
+        <ion-label for="pwd" color="primary"> PCD: </ion-label>
+        <ion-toggle
+          id="pwd"
+          name="pwd"
+          formControlName="pwd"
+          checked
+        ></ion-toggle>
       </ion-item>
-
     </ion-list>
 
-    <ion-button class="ion-margin-vertical" type="submit" expand="block" [disabled]="registerForm.invalid">Atualizar
+    <ion-button
+      class="ion-margin-vertical"
+      type="submit"
+      expand="block"
+      [disabled]="registerForm.invalid"
+      >Atualizar
     </ion-button>
-
   </form>
-
 </ion-content>
 
 <!-- Footer -->
@@ -172,16 +280,10 @@
           <ion-label>Home</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button routerLink="/adotar">
-          <ion-icon name="paw-outline"></ion-icon>
-          <ion-label>Adotar</ion-label>
-        </ion-tab-button>
-
         <ion-tab-button routerLink="/perfiluser">
           <ion-icon name="person-outline"></ion-icon>
           <ion-label>Perfil</ion-label>
         </ion-tab-button>
-
       </ion-tab-bar>
     </ion-tabs>
   </ion-toolbar>
